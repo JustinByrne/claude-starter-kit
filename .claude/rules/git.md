@@ -14,6 +14,7 @@
 ## Commits
 - Never make one large commit. Split work into small, logical, atomic commits.
 - Each commit covers one concern (e.g. refactor, feature, tests, docs, config), not a mix.
+- Commit completed work without asking for approval. Do not push or open pull requests unless asked.
 - Before committing, run `git status` and `git diff`, then plan the commit sequence and list it. You do not need approval: list the plan, then make the commits.
 - Stage selectively with `git add <paths>`. Never use `git add -A`, `git add .` or `git commit -a`.
 - Run `git add` and `git commit` as separate commands.
