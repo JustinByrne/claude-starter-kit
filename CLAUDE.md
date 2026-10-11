@@ -44,3 +44,11 @@ Non-obvious things that trip people up: flaky services, legacy areas not to touc
 
 ## Project-specific rules
 Anything that applies only to this project. Shared rules live in `.claude/rules/`.
+
+## Rule priority
+If instructions conflict, follow them in this order:
+1. `CLAUDE.local.md` (personal, not committed)
+2. This file
+3. `.claude/rules/`
+
+Overrides should name the rule they replace, e.g. "Override `.claude/rules/git.md`: committing directly to `main` is allowed in this project."
