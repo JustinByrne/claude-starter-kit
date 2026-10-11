@@ -4,6 +4,18 @@
     "pr": ""
   },
   "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff)",
+      "Bash(git diff:*)",
+      "Bash(git log)",
+      "Bash(git log:*)",
+      "Bash(git show)",
+      "Bash(git show:*)",
+      "Bash(git branch)",
+      "Bash(git branch --show-current)"
+    ],
     "deny": [
       "Read(./.env)",
       "Read(./.env.local)",
