@@ -2,7 +2,7 @@
 
 ## Branches and safety
 - Never commit directly to `main` or `master`. Create a branch first, named `type/short-description` (e.g. `fix/quote-due-date`), using the commit message types.
-- Do not push or open pull requests unless asked.
+- Do not push or open pull requests unless asked. Never ask or offer to push or to open a pull request.
 - Ask before running anything that can discard work: `git reset --hard`, `git clean`, `git checkout -- <path>`, `git restore`, `git stash drop`, `git branch -D` and `git push --force`.
 - If a force push is needed, use `--force-with-lease`, and only on your own branch.
 - Do not rewrite commits that have already been pushed (`git commit --amend`, rebase) without asking.
@@ -14,6 +14,7 @@
 ## Commits
 - Never make one large commit. Split work into small, logical, atomic commits.
 - Each commit covers one concern (e.g. refactor, feature, tests, docs, config), not a mix.
+- Commit completed work without asking for approval.
 - Before committing, run `git status` and `git diff`, then plan the commit sequence and list it. You do not need approval: list the plan, then make the commits.
 - Stage selectively with `git add <paths>`. Never use `git add -A`, `git add .` or `git commit -a`.
 - Run `git add` and `git commit` as separate commands.
