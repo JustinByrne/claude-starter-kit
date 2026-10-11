@@ -50,6 +50,26 @@ Works with both GNU `tar` (Linux) and `bsdtar` (macOS). The repository must be p
 
 5. Keep personal, machine-specific overrides in `CLAUDE.local.md` and `.claude/settings.local.json`, and make sure both are in the project's `.gitignore`.
 
+## Overriding the kit
+
+Claude Code doesn't replace one instruction file with another: it loads them all into context together. If two files conflict, Claude may follow either one, so overrides need to be explicit.
+
+| File | Applies to | Committed? |
+| --- | --- | --- |
+| `CLAUDE.local.md` in the project root | That project, for one person | No, add it to `.gitignore` |
+| `~/.claude/CLAUDE.md` and `~/.claude/rules/` | Every project on one machine | No |
+| The project's `CLAUDE.md` and `.claude/rules/` | That project, for everyone | Yes |
+
+The kit's `CLAUDE.md` includes a **Rule priority** section telling Claude to follow `CLAUDE.local.md` first, then `CLAUDE.md`, then `.claude/rules/`. Keep that section when filling in the template. When overriding, name the rule being replaced:
+
+```markdown
+Override `.claude/rules/git.md`: committing directly to `main` is allowed in this project.
+```
+
+This is an instruction to Claude rather than something Claude Code enforces, so it's reliable but not guaranteed. To change a rule for everyone on a project, it's simpler to edit or delete the project's copy of the rule file directly.
+
+Settings work differently. `.claude/settings.local.json` takes precedence over the project's `.claude/settings.json`, which takes precedence over `~/.claude/settings.json`, so single values such as `attribution` can be overridden locally. Permission lists are combined instead, and a `deny` rule always wins over an `allow`. To let Claude read a blocked `.env` file, remove the rule from the project's `settings.json`.
+
 ## Pulling in updates later
 
 Because the kit is copied rather than linked, projects don't pick up changes automatically. To refresh a project, re-run the command **without** the `-k` flag and with `CLAUDE.md` excluded, so the project's filled-in copy isn't replaced by the template:
