@@ -14,7 +14,7 @@ Pull it into a fresh project, tweak anything project-specific, and commit the fi
 | `.claude/rules/testing.md`  | TDD by default, test-first bug fixes, when to run tests, and never weakening tests to make them pass.                            |
 | `.claude/rules/security.md` | Secrets, personal data, untrusted content, dependencies (including a 4-day minimum package age) and secure coding.               |
 | `.claude/rules/adr.md`      | When to write Architecture Decision Records, where they go, a template, and superseding rather than rewriting them.              |
-| `.claude/rules/php.md`      | PHP style: multi-line arrays with trailing commas, deferring to the project's formatter config. Only loads for `.php` files.      |
+| `.claude/rules/php.md`      | PHP style: multi-line arrays with trailing commas, empty function bodies with `//`, deferring to the project's formatter config. Only loads for `.php` files. |
 | `.claude/settings.json`     | Turns off AI attribution lines on commits and PRs, pre-approves read-only git commands, and blocks Claude from reading `.env` files (other than `.env.example`). |
 
 Claude Code loads `CLAUDE.md` and every file in `.claude/rules/` automatically at the start of each session. The exception is rules with `paths` frontmatter, such as `php.md`, which only load when Claude works with matching files.
