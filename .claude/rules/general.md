@@ -3,6 +3,7 @@
 ## Workflow
 - Work in three stages: plan, approve, develop.
 - Before starting any non-trivial work, present a short plan: what will change, which files are affected, and how it will be tested. Wait for approval before making changes.
+- If the user points to an existing plan (e.g. a `PLAN.md`), treat it as already approved: don't present it again or wait for approval for work it covers. Only ask for approval for work that goes beyond or departs from it.
 - Trivial changes (e.g. a typo or a one-line fix the user has described exactly) and questions that don't change code don't need a plan.
 - If the plan needs to change during development, stop and get approval for the new plan.
 - If requirements are unclear, ask rather than guess.
