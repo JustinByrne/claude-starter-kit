@@ -55,6 +55,21 @@ public function send(User $user, string $message): void
 }
 ```
 
+## Operators
+- Do not put a space after the `!` operator.
+
+```php
+// Do
+if (!$user->isActive()) {
+    // ...
+}
+
+// Don't
+if (! $user->isActive()) {
+    // ...
+}
+```
+
 ## Empty functions
 - Put the braces of an empty function or method body on their own lines, with a `//` comment inside. This includes constructors that only use property promotion.
 
